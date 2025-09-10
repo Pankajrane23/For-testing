@@ -11,8 +11,7 @@ class Person {
 
 // Create a list of people
 def people = [
-        new Person(name: "Alice", age: 25),
-        new Person(name: "Bob", age: 30),
+
         new Person(name: "Charlie", age: 22)
 ]
 
@@ -30,3 +29,40 @@ def capitals = [France: "Paris", Japan: "Tokyo", India: "New Delhi"]
 capitals.each { country, capital ->
     println "The capital of $country is $capital"
 }
+
+// Import JsonSlurper for parsing JSON
+import groovy.json.JsonSlurper
+import groovy.json.JsonOutput
+
+// 1. Write some text to a file
+def file = new File("example.txt")
+file.text = "Hello from Groovy!\n"
+
+// Append more lines
+file << "This is a second line.\n"
+
+// Read file content
+println "File content:"
+println file.text
+
+// 2. Create a Map and convert it to JSON
+def user = [
+        name: "Alice",
+        age : 25,
+        skills: ["Groovy", "Java", "Git"]
+]
+
+def jsonString = JsonOutput.prettyPrint(JsonOutput.toJson(user))
+println "\nJSON representation:"
+println jsonString
+
+// 3. Parse JSON back into a Groovy object
+def parsed = new JsonSlurper().parseText(jsonString)
+println "\nParsed JSON object:"
+println "Name: ${parsed.name}, Age: ${parsed.age}, Skills: ${parsed.skills}"
+
+def text = "Groovy"
+def reversedText = text.reverse()
+
+println "Original: $text"
+println "Reversed: $reversedText"
