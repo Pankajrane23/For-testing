@@ -11,8 +11,7 @@ class Person {
 
 // Create a list of people
 def people = [
-        new Person(name: "Alice", age: 25),
-        new Person(name: "Bob", age: 30),
+
         new Person(name: "Charlie", age: 22)
 ]
 
