@@ -60,3 +60,9 @@ println jsonString
 def parsed = new JsonSlurper().parseText(jsonString)
 println "\nParsed JSON object:"
 println "Name: ${parsed.name}, Age: ${parsed.age}, Skills: ${parsed.skills}"
+
+def text = "Groovy"
+def reversedText = text.reverse()
+
+println "Original: $text"
+println "Reversed: $reversedText"
