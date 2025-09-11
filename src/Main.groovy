@@ -66,3 +66,18 @@ def reversedText = text.reverse()
 
 println "Original: $text"
 println "Reversed: $reversedText"
+
+// Hello World in Groovy
+println "Hello, Groovy!"
+
+// Example: Loop through a list
+def fruits = ["Apple", "Banana", "Mango"]
+fruits.each { fruit ->
+    println "I like $fruit"
+}
+
+// Example: Method in Groovy
+def addNumbers(a, b) {
+    return a + b
+}
+println "Sum: " + addNumbers(5, 7)
